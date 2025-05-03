@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Open+Sans:wght@300;400&display=swap");
+body {
+    background: linear-gradient(270deg, #f5deb3, #e0c9a6);
+    background-size: 400% 400%;
+    animation: gradientBG 8s ease infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    font-family: "poppins";
+    transition: background 0.5s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    padding-bottom: 40px;
+}
+.dark-mode {
+    background: linear-gradient(270deg, #2c2c2c, #1a1a1a);
+    color: white;
+}
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.game-container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+.game-title {
+    text-align: center;
+    font-size: 2.5rem;
+    max-width: 100%;
+    word-wrap: break-word;
+    margin-top: 10px;
+    margin: 0; 
+    padding: 10px;
+}
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.cell {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #f8f1e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    cursor: pointer;
+    border: 2px solid #8b4513;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+.dark-mode .cell {
+    background: #333;
+    border: 2px solid #555;
+    color: white;
+}
+.cell:hover {
+    background: #e0c9a6;
+}
+.dark-mode .cell:hover {
+    background: #1f3661;
+}
+.scoreboard {
+    margin-top: 20px;
+}
+.realistic-button {
+    margin-top: 10px;
+    padding: 12px 20px;
+    background: linear-gradient(to bottom, #5e95b9, #128db7);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px #5a2d0c;
+    transition: all 0.2s ease;
+    width: 100%;
+    max-width: 200px;
+}
+.realistic-button:active {
+    box-shadow: 0 2px #5a2d0c;
+    transform: translateY(2px);
+}
+.dark-mode .realistic-button {
+    background: linear-gradient(to bottom, #0c2041, #202669);
+    box-shadow: 0 4px #222;
+}
+.dark-mode .realistic-button:active {
+    box-shadow: 0 2px #222;
+    transform: translateY(2px);
+}
+
+@media (max-width: 500px) {
+    .game-container {
+        width: 90%;
+    }
+    .board {
+        max-width: 250px;
+    }
+    .realistic-button {
+        max-width: 100%;
+    }
+}
+.symbol-selection {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.game-title {
+    margin-top: 0;
+}
+.audio-control {
+    margin-top: 10px;
+    padding: 10px;
+    background: linear-gradient(to bottom, #375c37, #006400);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px #006400;
+    transition: all 0.2s ease;
+    width: 100%;
+    max-width: 200px;
+}
+.audio-control:active {
+    box-shadow: 0 2px #006400;
+    transform: translateY(2px);
+}
+.dark-mode .audio-control {
+    background: linear-gradient(to bottom, #555, #333);
+    box-shadow: 0 4px #222;
+}
+.dark-mode .audio-control:active {
+    box-shadow: 0 2px #8c93f4;
+    transform: translateY(2px);
+}
